@@ -72,7 +72,7 @@ Nous devons maintenant nous connecter et changer le propriétaire de /opt :
 
 ```
 sudo chown cuckoo /opt && sudo chmod 777 /opt && cd /opt
-su cukoo
+su cuckoo
 ```
 
 Clonons le dépôt cuckoo3 :
@@ -84,13 +84,13 @@ cd cuckoo3
 Créons un environnement virtuel pour nos manipulations :
 
 ```
-python3 -m venv venv
+python3.8 -m venv venv
 source venv/bin/activate
 ```
 
 Enfin, nous pouvons installer cuckoo3. Cela peut prendre un certain temps :
 ```
-pip install whell
+pip install wheel
 
 ./install.sh
 ```
