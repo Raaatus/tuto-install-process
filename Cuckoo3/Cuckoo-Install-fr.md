@@ -108,7 +108,7 @@ Installons vmcloak, qui nous permet de déployer des machines virtuelles et des 
 
 ```
 git clone https://github.com/hatching/vmcloak.git && cd vmcloak
-pip install . && cd ..
+python3.8 setup.py install && cd ..
 ```
 Créons l'interface de résultats pour recevoir et communiquer les résultats des analyses :
 
