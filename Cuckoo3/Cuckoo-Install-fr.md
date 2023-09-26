@@ -603,7 +603,7 @@ WantedBy=multi-user.target
 ```
 nano /opt/auto/script_cuckoo_web.sh
 ```
-Créons le script pour changer le mot de passe avec le mot de passe de l'utilisateur cuckoo.
+Créons le script de lancement de cuckoo.
 ```
 #!/bin/bash
 source /opt/cuckoo3/venv/bin/activate
