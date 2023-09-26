@@ -583,9 +583,8 @@ Créons un service pour le paramètrage de l'interface au démarrage:
 ```
 mkdir /opt/auto
 sudo nano /etc/systemd/system/int-conf-cuckoo.service
-
 ```
-
+```
 [Unit]
 Description=Parametrage Cuckoo interface
 After=network.target
@@ -600,6 +599,7 @@ Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
+```
 ```
 nano /opt/auto/script_cuckoo_web.sh
 ```
