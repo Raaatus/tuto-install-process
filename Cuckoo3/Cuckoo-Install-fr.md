@@ -544,13 +544,14 @@ Configurons Cuckoo-Web :
 ```
 nano ~/.cuckoocwd/web/web_local_settings.py
 ```
-
+Changez ça :
+```
 # Allow verbose debug error message in case of application fault.
 # SECURITY WARNING: don't run with debug turned on in production!
 - DEBUG = False
 + DEBUG = True
   DEBUG404 = False
-
+```
 (Optionnel) Activez les modules : ~/.cuckoocwd/conf/processing/misp.yaml
 ```
  # Enable the usage of MISP queries in pre and post  processing for
