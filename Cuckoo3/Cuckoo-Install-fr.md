@@ -88,9 +88,9 @@ python3.8 -m venv venv
 source venv/bin/activate
 ```
 
-Enfin, nous pouvons installer cuckoo3. Cela peut prendre un certain temps :
+Enfin, nous pouvons installer cuckoo3. Cela peut prendre un certain temps : (Il peut avoir des conflicts, pas grave)
 ```
-pip install wheel
+pip install wheel pefile==2022.5.30
 
 ./install.sh
 ```
