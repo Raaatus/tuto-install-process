@@ -579,14 +579,33 @@ cuckoo web --host 0.0.0.0 --port 8080
 ```
 ## III - Creation des Services
 
+Créons un service pour le paramètrage de l'interface au démarrage:
 ```
 mkdir /opt/auto
+sudo nano /etc/systemd/system/int-conf-cuckoo.service
+
+```
+
+[Unit]
+Description=Parametrage Cuckoo interface
+After=network.target
+
+[Service]
+Type=simple
+ExecStartPre=/bin/sleep 2
+ExecStart=/usr/bin/bash /opt/cuckoo3/venv/bin/vmcloak-qemubridge br0 192.168.30.1/24
+User=cuckoo
+Group=cuckoo
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
 nano /opt/auto/script_cuckoo_web.sh
 ```
 Créons le script pour changer le mot de passe avec le mot de passe de l'utilisateur cuckoo.
 ```
 #!/bin/bash
-echo 'passusercuckoo' | sudo -S /opt/cuckoo3/venv/bin/vmcloak-qemubridge br0 192.168.30.1/24
 source /opt/cuckoo3/venv/bin/activate
 cuckoo web --host 0.0.0.0 --port 8080
 ```
@@ -645,6 +664,8 @@ WantedBy=multi-user.target
 Activons et démarrons les services :
 
 ```
+sudo systemctl enable /etc/systemd/system/int-conf-cuckoo.service && sudo systemctl start int-conf-cuckoo.service
+
 sudo systemctl enable /etc/systemd/system/cuckoo-web.service && sudo systemctl start cuckoo-web.service
 
 sudo systemctl enable /etc/systemd/system/cuckoo.service && sudo systemctl start cuckoo.service
