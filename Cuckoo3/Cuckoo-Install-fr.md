@@ -593,8 +593,8 @@ After=network.target
 Type=simple
 ExecStartPre=/bin/sleep 2
 ExecStart=/usr/bin/bash /opt/cuckoo3/venv/bin/vmcloak-qemubridge br0 192.168.30.1/24
-User=cuckoo
-Group=cuckoo
+User=root
+Group=root
 Restart=on-failure
 
 [Install]
